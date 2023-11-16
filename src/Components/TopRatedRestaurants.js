@@ -1,11 +1,11 @@
-import { restaurants } from "../utils/restaurants";
+// import { restaurants } from "../utils/restaurants";
 import { useState } from "react";
 
 const TopRatedRestaurants = (props) => {
   //const [TopRestaurants, setTopRestaurants] = useState(restaurants);
   function getToprestaurants() {
     const Toprestaurantsdata = props.filteredRestaurants.filter(
-      (restaurant) => restaurant.avgRating > 4
+      (restaurant) => restaurant.info.avgRating > 4
     );
    // setTopRestaurants(Toprestaurantsdata);
    props.topRatedRestaurants(Toprestaurantsdata);

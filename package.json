@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"parcel app.html"
+    "start": "parcel app.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "parcel": "^2.10.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0"
   },
   "devDependencies": {
     "process": "^0.11.10"

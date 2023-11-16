@@ -31,6 +31,14 @@ li{
     border-radius: 10px;
     
 }
+.shimmer-card{
+    margin: 10px;
+    width:30%;
+    height:30%;
+    border: 2px solid rgb(169, 174, 196);
+    border-radius: 10px;
+    background-color: aliceblue; 
+}
 .restaurant-card:hover{
     background-color:whitesmoke;
 }

@@ -11,12 +11,12 @@ export const RestaurantCard = (props) => {
       <div className="restaurant-details">
         <div>
           <h2>{name}</h2>
-          <h3>{cuisines[0]}</h3>
+          <h3>{cuisines}</h3>
           <button className="Menu">Open Menu</button>
         </div>
         <div>
           <h3>{avgRating}</h3>
-          <h3>{costForTwo/100}</h3>
+          <h3>{costForTwo}</h3>
         </div>
         
       </div>
