@@ -1,4 +1,5 @@
  import { useOnline } from "../utils/useOnline";
+ import { Link } from "react-router-dom";
  
  export const Header = () => {
   const OnlineStatus=useOnline();
@@ -10,9 +11,9 @@
         />
         <ul className="section">
           <li>OnlineStatus: {OnlineStatus?"🟢" :"🔴"}</li>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About Us</Link></li>
+          <li><Link to="/contact">Contact Us</Link></li>
         </ul>
       </div>
     );

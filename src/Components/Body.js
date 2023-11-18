@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import TopRatedRestaurants from "./TopRatedRestaurants";
 import Shimmer from "./Shimmer";
 import { useOnline } from "../utils/useOnline";
+import { Link } from "react-router-dom";
 
 export const Body = () => {
   const [searchText, setSearchText] = useState("");
@@ -25,7 +26,7 @@ export const Body = () => {
     // optional chaining
 
     console.log(response);
-    console.log(
+    console.log("response",
       response?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
@@ -39,9 +40,9 @@ export const Body = () => {
     );
   }
 
-  const online=useOnline();
-  if(!online){
-    return <h1>Please check your Internet Connection</h1>
+  const online = useOnline();
+  if (!online) {
+    return <h1>Please check your Internet Connection</h1>;
   }
 
   function filterRestaurants() {
@@ -70,16 +71,18 @@ export const Body = () => {
         filteredRestaurants={filteredRestaurants}
       />
 
-      {/* // Conditional Rendering */}
-      {filteredRestaurants.length == 0 ? (
+    
+      {filteredRestaurants.length === 0 ? (
         <Shimmer />
       ) : (
         <div className="restaurant-cards">
           {filteredRestaurants.map((restaurant) => (
-            <RestaurantCard
-              key={restaurant.info.id}
-              details={restaurant.info}
-            />
+            <Link to={`/restaurant/${restaurant.info.id}`}>
+              <RestaurantCard
+                key={restaurant.info.id}
+                details={restaurant.info}
+              />
+            </Link>
           ))}
         </div>
       )}
